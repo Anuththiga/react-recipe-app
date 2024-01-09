@@ -28,3 +28,45 @@ h1 {
   margin-top: 1rem;
   text-transform: uppercase;
 }
+
+.recipes {
+  display: grid;
+  margin: 2rem auto 0;
+  max-width: 1024px;
+
+}
+
+.recipe {
+  background-color: var(--dark);
+  text-align: left;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+li {
+  line-height: 1.4;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--darker);
+  background-color: var(--blue);
+  padding: 0.5rem 1rem;
+  border-radius: 0.50rem;
+}
+
+
