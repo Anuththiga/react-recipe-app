@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot, deleteDoc, doc } from "firebase/firestore";
 import { db } from "./firebase.config";
 
 function App() {
@@ -13,6 +13,23 @@ function App() {
   const [popupActive, setPopupActive] = useState(false);
 
   const recipesCollectionRef = collection(db, "recipes");
+
+  const viewHandler = (id) => {
+    const recipesClone = [...recipes];
+    recipesClone.forEach(recipe => {
+      if(recipe.id === id) {
+        recipe.viewing = !recipe.viewing;
+      } else {
+        recipe.viewing = false
+      }
+    })
+
+    setRecipes(recipesClone);
+  }
+
+  const removeRecipe = (id) => {
+    deleteDoc(doc(db, "recipes", id))
+  }
 
   useEffect(() => {
     onSnapshot(recipesCollectionRef, snapshot => {
@@ -53,8 +70,8 @@ function App() {
               </div>
             }
             <div className="buttons">
-              <button>View { recipe.viewing ? 'less' : 'more' }</button>
-              <button className="remove">Remove</button>
+              <button onClick={() => viewHandler(recipe.id)}>View { recipe.viewing ? 'less' : 'more' }</button>
+              <button className="remove" onClick={() => removeRecipe(recipe.id)}>Remove</button>
             </div>
           </div>
         ))}
