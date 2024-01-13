@@ -85,3 +85,44 @@ button.remove {
   background-color: var(--crimson);
   color: var(--light);
 }
+
+.popup {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  height: 100%; 
+  width: 100%;
+  z-index: 1;
+}
+
+.popup-inner {
+  background-color: var(--dark);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  overflow: auto;
+  max-height: calc(100vh - 4rem);
+}
+
+.popup h2 {
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group button {
+  margin-top: 1rem;
+}
+input, textarea {
+  padding: 0.5rem;
+  display: block;
+  width: 100%;
+}

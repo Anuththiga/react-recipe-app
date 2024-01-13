@@ -77,38 +77,38 @@ function App() {
         ))}
       </div>
 
-      {popupActive && <div>
-          <div>
+      {popupActive && <div className="popup">
+          <div className="popup-inner">
             <h2>Add a New Recipe</h2>
             <form>
-              <div>
+              <div className="form-group">
                 <label>Title</label>
                 <input 
                   type="text"
                 />
               </div>
-              <div>
+              <div className="form-group">
                 <label>Description</label>
                 <textarea 
                   type="text"
                   rows="3"
                 />
               </div>
-              <div>
+              <div className="form-group">
                 <label>Ingredients</label>
                 <input 
                   type="text"
                 />
               </div>
-              <div>
+              <div className="form-group">
                 <label>Steps</label>
                 <input 
                   type="text"
                 />
               </div>
-              <div>
-                <button>Submit</button>
-                <button>Close</button>
+              <div className="buttons">
+                <button type="submit">Submit</button>
+                <button type="button" className="remove">Close</button>
               </div>
             </form>
           </div>
