@@ -1,15 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+
 :root {
   --light: #eee;
-  --dark: #452f4e;
-  --darker: #322336;
-  --blue: #61DAFB;
+  --dark: #553538;
+  --darker: #271919;
+  --blue: #89bedd;
   --crimson: #DB3052;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Play", sans-serif;
   box-sizing: border-box;
 }
 
@@ -47,10 +49,6 @@ h1 {
 h4 {
   margin-top: 2rem;
   margin-bottom: 1rem;
-}
-
-ol, ul {
-  list-style: none;
 }
 
 li {
@@ -125,4 +123,11 @@ input, textarea {
   padding: 0.5rem;
   display: block;
   width: 100%;
+  margin-bottom: 0.5rem;
+  max-height: 200px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
 }
